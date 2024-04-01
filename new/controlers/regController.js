@@ -96,6 +96,8 @@ exports.updateUser = async (req, res) => {
     const { id } = req.params;
     const { name, email, role } = req.body;
 
+    console.log(req.body);
+
     try {
         const user = await User.findByIdAndUpdate(id, { name, email, role }, { new: true });
         if (!user) {
